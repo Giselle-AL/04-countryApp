@@ -1,0 +1,21 @@
+<h2>X Región</h2>
+<hr>
+<div class="row ">
+  <div class="col text-center">
+    <button
+    *ngFor="let region of regions"
+    class="btn btn-outline-info mx-2"
+    [ngClass]="{'btn-outline-danger': selectedReg === region}"
+    (click)="searchByRegion(region)">
+      {{region}} </button>
+  </div>
+</div>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
+    <!-- Componente de la tabla X región -->
+     <countries-table [countries]="countries"></countries-table>   </div>
+
+</div>
